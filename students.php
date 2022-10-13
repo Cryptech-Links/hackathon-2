@@ -25,13 +25,13 @@ function findStudentByPosition(array $students, int $position): array
 {
     // edit the code below
 
-    return   $students[$position];
+    return   $students[$position-=1];
 
 }
 
 $students = getStudents();
 
-//print_r(sortStudents($students));
+print_r(sortStudents($students));
 
 print_r(findStudentByPosition($students, 3));
 
