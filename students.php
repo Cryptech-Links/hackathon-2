@@ -15,13 +15,18 @@ function getStudents(): array
 function sortStudents(array $students): array
 {
     // edit the code below
-    return [];
+
+    $keys = array_column($students, 'averageScore');
+    array_multisort($keys, SORT_DESC, $students);
+    return $students;
 }
 
 function findStudentByPosition(array $students, int $position): array
 {
     // edit the code below
-    return [];
+
+    return   $students[$position];
+
 }
 
 $students = getStudents();
@@ -29,4 +34,6 @@ $students = getStudents();
 //print_r(sortStudents($students));
 
 print_r(findStudentByPosition($students, 3));
+
+//print_r(json_encode(getStudents()));
 
